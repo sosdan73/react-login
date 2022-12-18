@@ -15,6 +15,7 @@ const emailReducer = (state, action) => {
     }
     return { value: '', isValid: false }
 }
+
 const passwordReducer = (state, action) => {
     if (action.type === 'USER_INPUT') {
         return { value: action.val, isValid: action.val.trim().length > 6 }
@@ -42,13 +43,6 @@ const Login = (props) => {
     const emailInputRef = useRef();
     const passwordInputRef = useRef();
 
-    // useEffect(() => {
-    //     console.log('When mounted')
-    //     return () => {
-    //         console.log('When unmounted')
-    //     }
-    // }, [])
-
     const { isValid: emailIsValid } = emailState;
     const { isValid: passwordIsValid } = passwordState;
 
@@ -68,11 +62,6 @@ const Login = (props) => {
             type: 'USER_INPUT',
             val: event.target.value
         })
-
-        // setFormIsValid(
-        //     event.target.value.includes('@') &&
-        //     passwordState.isValid
-        // )
     };
 
     const passwordChangeHandler = (event) => {
@@ -80,11 +69,6 @@ const Login = (props) => {
             type: 'USER_INPUT',
             val: event.target.value
         })
-
-        // setFormIsValid(
-        //     event.target.value.trim().length > 6 &&
-        //     emailState.value.includes('@')
-        // )
     };
 
     const validateEmailHandler = () => {
