@@ -5,7 +5,7 @@ import classes from './Home.module.css';
 import Button from "../UI/Button/Button";
 import AuthContext from "../../store/auth-context";
 
-const Home = (props) => {
+const Home = _ => {
     const authCtx = useContext(AuthContext);
 
     return (
